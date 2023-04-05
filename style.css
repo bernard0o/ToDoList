@@ -1,0 +1,133 @@
+/* Definições gerais */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+div#toDo{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 250px;
+    height: 330px;
+    padding: 20px;
+    overflow: hidden;
+}
+hr{
+    color: black;
+    height: 1px;
+    background-color: black;
+    width: 100%;
+}
+
+/* Superior */
+
+div#toDo div#superior{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+div#toDo div#superior input[type="text"]{
+    grid-area: "input";
+    outline: none;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+div#toDo div#superior input[type="button"]{
+    grid-area: "button";
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid black;
+    border-left: none;
+    background-color: rgb(240, 240, 240);
+    font-weight: bolder;
+}
+
+div#toDo div#superior input[type="button"]:hover{
+    background-color: rgb(216, 216, 216);
+}
+
+div#toDo div#superior div#input{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 4fr 1fr;
+    grid-template-areas: "input" "button";
+}
+
+/* Inferior */
+
+div#inferior{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+    margin-top: 2px;
+    z-index: -1;
+}
+
+div.tasks{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 4fr 1fr;
+    padding-top: 3px;
+    animation-name: slideFromLeft;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes slideFromLeft {
+    from{
+        margin-left: -400px;
+    }
+    to{
+        margin-left: 0px;
+    }
+}
+
+@keyframes slideToRight {
+    from{
+        margin-right: 0px;
+    }
+    to{
+        margin-right: -500px;
+    }
+}
+
+div.tasks p{
+    border: 1px solid black;
+    padding: 5px;
+    font-size: small;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+div.tasks input{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid black;
+    border-left: none;
+    background-color: rgb(240, 240, 240);
+    font-weight: bolder;
+}
+
+div.tasks input:hover{
+    background-color: rgb(216, 216, 216);
+}
